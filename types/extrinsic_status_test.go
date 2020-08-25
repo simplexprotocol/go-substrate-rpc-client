@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	. "github.com/Snowfork/go-substrate-rpc-client/types"
+	. "github.com/snowfork/go-substrate-rpc-client/types"
 	"github.com/stretchr/testify/assert"
 )
 

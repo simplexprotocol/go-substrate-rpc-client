@@ -21,8 +21,8 @@ import (
 	"testing"
 	"time"
 
-	gsrpc "github.com/Snowfork/go-substrate-rpc-client"
-	"github.com/Snowfork/go-substrate-rpc-client/config"
+	gsrpc "github.com/snowfork/go-substrate-rpc-client"
+	"github.com/snowfork/go-substrate-rpc-client/config"
 	"github.com/stretchr/testify/assert"
 )
 

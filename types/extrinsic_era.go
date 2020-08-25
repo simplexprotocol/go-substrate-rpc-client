@@ -16,7 +16,7 @@
 
 package types
 
-import "github.com/Snowfork/go-substrate-rpc-client/scale"
+import "github.com/snowfork/go-substrate-rpc-client/scale"
 
 // ExtrinsicEra indicates either a mortal or immortal extrinsic
 type ExtrinsicEra struct {
