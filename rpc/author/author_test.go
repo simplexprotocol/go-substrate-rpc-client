@@ -20,8 +20,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Snowfork/go-substrate-rpc-client/client"
-	"github.com/Snowfork/go-substrate-rpc-client/rpcmocksrv"
+	"github.com/snowfork/go-substrate-rpc-client/client"
+	"github.com/snowfork/go-substrate-rpc-client/rpcmocksrv"
 )
 
 var author *Author

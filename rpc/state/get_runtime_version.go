@@ -17,8 +17,8 @@
 package state
 
 import (
-	"github.com/Snowfork/go-substrate-rpc-client/client"
-	"github.com/Snowfork/go-substrate-rpc-client/types"
+	"github.com/snowfork/go-substrate-rpc-client/client"
+	"github.com/snowfork/go-substrate-rpc-client/types"
 )
 
 // GetRuntimeVersion returns the runtime version at the given block
