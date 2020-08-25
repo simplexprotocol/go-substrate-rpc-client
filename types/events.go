@@ -199,7 +199,7 @@ type EventSystemExtrinsicSuccess struct {
 // DispatchInfo contains a bundle of static information collected from the `#[weight = $x]` attributes.
 type DispatchInfo struct {
 	// Weight of this transaction
-	Weight U32
+	Weight U64
 	// Class of this transaction
 	Class DispatchClass
 	// PaysFee indicates whether this transaction pays fees
@@ -213,6 +213,8 @@ type DispatchClass struct {
 	IsNormal bool
 	// An operational dispatch
 	IsOperational bool
+	// A mandatory dispatch
+	IsMandatory bool
 }
 
 func (d *DispatchClass) Decode(decoder scale.Decoder) error {
@@ -221,7 +223,10 @@ func (d *DispatchClass) Decode(decoder scale.Decoder) error {
 		d.IsNormal = true
 	} else if b == 1 {
 		d.IsOperational = true
+	} else if b == 2 {
+		d.IsMandatory = true
 	}
+
 	return err
 }
 
