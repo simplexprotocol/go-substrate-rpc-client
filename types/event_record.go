@@ -219,11 +219,12 @@ func (e EventRecordsRaw) DecodeEventRecords(m *Metadata, t interface{}) error {
 
 		// ensure first field is for Phase, last field is for Topics
 		numFields := holder.Elem().NumField()
-		if numFields < 2 {
-			return fmt.Errorf("expected event #%v with EventID %v, field %v_%v to have at least 2 fields "+
-				"(for Phase and Topics), but has %v fields", i, id, moduleName, eventName, numFields)
+		if numFields < 3 {
+			return fmt.Errorf("expected event #%v with EventID %v, field %v_%v to have at least 3 fields "+
+				"(for Index, Phase and Topics), but has %v fields", i, id, moduleName, eventName, numFields)
 		}
-		phaseField := holder.Elem().FieldByIndex([]int{0})
+		indexField := holder.Elem().FieldByIndex([]int{0})
+		phaseField := holder.Elem().FieldByIndex([]int{1})
 		if phaseField.Type() != reflect.TypeOf(phase) {
 			return fmt.Errorf("expected the first field of event #%v with EventID %v, field %v_%v to be of type "+
 				"types.Phase, but got %v", i, id, moduleName, eventName, phaseField.Type())
@@ -234,11 +235,13 @@ func (e EventRecordsRaw) DecodeEventRecords(m *Metadata, t interface{}) error {
 				"[]types.Hash for Topics, but got %v", i, id, moduleName, eventName, topicsField.Type())
 		}
 
+		indexField.Set(reflect.ValueOf(i))
+
 		// set the phase we decoded earlier
 		phaseField.Set(reflect.ValueOf(phase))
 
 		// set the remaining fields
-		for j := 1; j < numFields; j++ {
+		for j := 2; j < numFields; j++ {
 			err = decoder.Decode(holder.Elem().FieldByIndex([]int{j}).Addr().Interface())
 			if err != nil {
 				return fmt.Errorf("unable to decode field %v event #%v with EventID %v, field %v_%v: %v", j, i, id, moduleName,
