@@ -112,7 +112,6 @@ type EventImOnlineAllGood struct {
 
 // Exposure lists the own and nominated stake of a validator
 type Exposure struct {
-	EventRecordIndex uint64
 	Total            UCompact
 	Own              UCompact
 	Others           []IndividualExposure
@@ -120,7 +119,6 @@ type Exposure struct {
 
 // IndividualExposure contains the nominated stake by one specific third party
 type IndividualExposure struct {
-	EventRecordIndex uint64
 	Who              AccountID
 	Value            UCompact
 }
@@ -591,6 +589,7 @@ type EventCollectiveClosed struct {
 // This indicates that enough candidates existed, not that enough have has been elected.
 // The inner value must be examined for this purpose.
 type EventElectionsNewTerm struct {
+	EventRecordIndex uint64
 	Phase      Phase
 	NewMembers []struct {
 		Member  AccountID
