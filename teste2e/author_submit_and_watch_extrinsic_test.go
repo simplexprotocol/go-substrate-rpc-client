@@ -97,9 +97,8 @@ func TestAuthor_SubmitAndWatchExtrinsic(t *testing.T) {
 		SpecVersion: rv.SpecVersion,
 		TxVersion:   1,
 		Tip:         types.NewUCompactFromUInt(0),
+		TransactionVersion: 1,
 	}
-
-
 
 	err = ext.Sign(from, o)
 	if err != nil {

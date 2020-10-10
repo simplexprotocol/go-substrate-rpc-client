@@ -14,12 +14,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package types
+package hash
 
-// Weight is a numeric range of a transaction weight
-type Weight uint64
+import (
+	"testing"
 
-// NewWeight creates a new Weight type
-func NewWeight(u uint64) Weight {
-	return Weight(u)
+	"github.com/stretchr/testify/assert"
+)
+
+func TestIdentity(t *testing.T) {
+	h := NewIdentity([]byte("abc"))
+	assert.Equal(t, []byte{0x61, 0x62, 0x63}, h.Sum(nil))
 }

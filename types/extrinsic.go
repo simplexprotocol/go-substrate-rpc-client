@@ -129,20 +129,23 @@ func (e *Extrinsic) Sign(signer signature.KeyringPair, o SignatureOptions) error
 	if err != nil {
 		return err
 	}
+
 	era := o.Era
 	if !o.Era.IsMortalEra {
 		era = ExtrinsicEra{IsImmortalEra: true}
 	}
 
 	payload := ExtrinsicPayloadV4{
-		Method:      mb,
-		Era:         era,
-		Nonce:       o.Nonce,
-		Tip:         o.Tip,
-		SpecVersion: o.SpecVersion,
-		TxVersion:   o.TxVersion,
-		GenesisHash: o.GenesisHash,
-		BlockHash:   o.BlockHash,
+		ExtrinsicPayloadV3: ExtrinsicPayloadV3{
+			Method:      mb,
+			Era:         era,
+			Nonce:       o.Nonce,
+			Tip:         o.Tip,
+			SpecVersion: o.SpecVersion,
+			GenesisHash: o.GenesisHash,
+			BlockHash:   o.BlockHash,
+		},
+		TransactionVersion: o.TransactionVersion,
 	}
 
 	signerPubKey := NewAddressFromAccountID(signer.PublicKey)

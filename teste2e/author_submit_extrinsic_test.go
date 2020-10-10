@@ -140,6 +140,7 @@ func TestChain_SubmitExtrinsic(t *testing.T) {
 			SpecVersion: rv.SpecVersion,
 			TxVersion:   1,
 			Tip:         types.NewUCompactFromUInt(0),
+			TransactionVersion: 1,
 		}
 
 		extI := ext
