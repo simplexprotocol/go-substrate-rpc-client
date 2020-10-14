@@ -49,7 +49,7 @@ func KeyringPairFromSecret(seedOrPhrase, network string) (KeyringPair, error) {
 	if network != "" {
 		args = []string{"-n", network}
 	}
-	args = append(args, []string{"inspect-key", seedOrPhrase}...)
+	args = append(args, []string{"inspect", seedOrPhrase}...)
 
 	// use "subkey" command for creation of public key and address
 	cmd := exec.Command(subkeyCmd, args...)
