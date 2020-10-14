@@ -57,7 +57,7 @@ func KeyringPairFromSecret(seedOrPhrase, network string) (KeyringPair, error) {
 	// execute the command, get the output
 	out, err := cmd.Output()
 	if err != nil {
-		return KeyringPair{}, fmt.Errorf("failed to generate keyring pair from secret: %v", err.Error())
+		return KeyringPair{}, fmt.Errorf("failed to generate keyring pair from secret: seed: %v, network: %v err:%v", seedOrPhrase, network, err.Error())
 	}
 
 	if string(out) == "Invalid phrase/URI given" {
