@@ -107,7 +107,7 @@ func Sign(data []byte, privateKeyURI string) ([]byte, error) {
 	}
 
 	// use "subkey" command for signature
-	cmd := exec.Command(subkeyCmd, "sign", privateKeyURI, "--hex")
+	cmd := exec.Command(subkeyCmd, "sign", "--suri", privateKeyURI, "--hex")
 
 	// data to stdin
 	dataHex := hex.EncodeToString(data)
