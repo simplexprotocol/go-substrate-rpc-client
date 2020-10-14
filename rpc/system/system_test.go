@@ -20,9 +20,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/snowfork/go-substrate-rpc-client/client"
-	"github.com/snowfork/go-substrate-rpc-client/rpcmocksrv"
-	"github.com/snowfork/go-substrate-rpc-client/types"
+	"github.com/simplexprotocol/go-substrate-rpc-client/client"
+	"github.com/simplexprotocol/go-substrate-rpc-client/rpcmocksrv"
+	"github.com/simplexprotocol/go-substrate-rpc-client/types"
 )
 
 var system *System

@@ -24,8 +24,8 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/snowfork/go-substrate-rpc-client/scale"
-	"github.com/snowfork/go-substrate-rpc-client/signature"
+	"github.com/simplexprotocol/go-substrate-rpc-client/scale"
+	"github.com/simplexprotocol/go-substrate-rpc-client/signature"
 )
 
 const (

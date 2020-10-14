@@ -16,7 +16,7 @@
 
 package types
 
-import "github.com/snowfork/go-substrate-rpc-client/scale"
+import "github.com/simplexprotocol/go-substrate-rpc-client/scale"
 
 // DigestItem specifies the item in the logs of a digest
 type DigestItem struct {

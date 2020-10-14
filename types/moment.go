@@ -21,7 +21,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/snowfork/go-substrate-rpc-client/scale"
+	"github.com/simplexprotocol/go-substrate-rpc-client/scale"
 )
 
 const (

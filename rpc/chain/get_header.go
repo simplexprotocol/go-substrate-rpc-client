@@ -17,8 +17,8 @@
 package chain
 
 import (
-	"github.com/snowfork/go-substrate-rpc-client/client"
-	"github.com/snowfork/go-substrate-rpc-client/types"
+	"github.com/simplexprotocol/go-substrate-rpc-client/client"
+	"github.com/simplexprotocol/go-substrate-rpc-client/types"
 )
 
 // GetHeader retrieves the header for the specific block

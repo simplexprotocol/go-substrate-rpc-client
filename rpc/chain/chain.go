@@ -17,7 +17,7 @@
 package chain
 
 import (
-	"github.com/snowfork/go-substrate-rpc-client/client"
+	"github.com/simplexprotocol/go-substrate-rpc-client/client"
 )
 
 // Chain exposes methods for retrieval of chain data
